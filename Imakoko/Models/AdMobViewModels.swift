@@ -1,0 +1,27 @@
+//
+//  AdMobViewModels.swift
+//  Imakoko
+//
+//  Created by t&a on 2022/09/07.
+//
+
+import SwiftUI
+import Foundation
+import UIKit
+import GoogleMobileAds // 忘れずに
+
+struct AdMobBannerView: UIViewRepresentable {
+    func makeUIView(context: Context) -> GADBannerView {
+        let banner = GADBannerView(adSize: GADAdSizeBanner) // インスタンスを生成
+        // 諸々の設定をしていく
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716" // 自身の広告IDに置き換える
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        banner.rootViewController = windowScene?.windows.first!.rootViewController
+        banner.load(GADRequest())
+        return banner // 最終的にインスタンスを返す
+    }
+
+    func updateUIView(_ uiView: GADBannerView, context: Context) {
+      // 特にないのでメソッドだけ用意
+    }
+}
