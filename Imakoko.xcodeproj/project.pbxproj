@@ -8,27 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		12442D0328C8A4F600025B9C /* ImakokoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D0228C8A4F600025B9C /* ImakokoApp.swift */; };
-		12442D0528C8A4F600025B9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D0428C8A4F600025B9C /* ContentView.swift */; };
+		12442D0528C8A4F600025B9C /* RootMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D0428C8A4F600025B9C /* RootMainView.swift */; };
 		12442D0728C8A4F700025B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12442D0628C8A4F700025B9C /* Assets.xcassets */; };
 		12442D0A28C8A4F700025B9C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12442D0928C8A4F700025B9C /* Preview Assets.xcassets */; };
 		12442D1228C8A60900025B9C /* UIMapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D1128C8A60900025B9C /* UIMapModels.swift */; };
 		12442D1428C8A69A00025B9C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D1328C8A69A00025B9C /* LocationManager.swift */; };
-		12442D1628C8A75300025B9C /* AdMobViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D1528C8A75300025B9C /* AdMobViewModels.swift */; };
+		12442D1628C8A75300025B9C /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12442D1528C8A75300025B9C /* AdMobView.swift */; };
 		1278A8872CF9816B000DA119 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1278A8862CF9816A000DA119 /* PrivacyInfo.xcprivacy */; };
+		1278A8A32CF9FB89000DA119 /* DeviceSizeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278A8A22CF9FB89000DA119 /* DeviceSizeUtility.swift */; };
 		6A43E4EF26D23A60C782A5F7 /* Pods_Imakoko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625827FAA0B53B35B9961D55 /* Pods_Imakoko.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12442CFF28C8A4F600025B9C /* Imakoko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imakoko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12442D0228C8A4F600025B9C /* ImakokoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImakokoApp.swift; sourceTree = "<group>"; };
-		12442D0428C8A4F600025B9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12442D0428C8A4F600025B9C /* RootMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootMainView.swift; sourceTree = "<group>"; };
 		12442D0628C8A4F700025B9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12442D0928C8A4F700025B9C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12442D1028C8A54D00025B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		12442D1128C8A60900025B9C /* UIMapModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMapModels.swift; sourceTree = "<group>"; };
 		12442D1328C8A69A00025B9C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		12442D1528C8A75300025B9C /* AdMobViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobViewModels.swift; sourceTree = "<group>"; };
+		12442D1528C8A75300025B9C /* AdMobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
 		1278A8862CF9816A000DA119 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1278A8A22CF9FB89000DA119 /* DeviceSizeUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeUtility.swift; sourceTree = "<group>"; };
 		41DFA910C29F7A011515C483 /* Pods-Imakoko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imakoko.release.xcconfig"; path = "Target Support Files/Pods-Imakoko/Pods-Imakoko.release.xcconfig"; sourceTree = "<group>"; };
 		625827FAA0B53B35B9961D55 /* Pods_Imakoko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Imakoko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9264CA58F7ABF20A300E80 /* Pods-Imakoko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imakoko.debug.xcconfig"; path = "Target Support Files/Pods-Imakoko/Pods-Imakoko.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +71,9 @@
 			children = (
 				1278A8862CF9816A000DA119 /* PrivacyInfo.xcprivacy */,
 				12442D1028C8A54D00025B9C /* Info.plist */,
-				12442D0228C8A4F600025B9C /* ImakokoApp.swift */,
-				12442D0428C8A4F600025B9C /* ContentView.swift */,
-				12442D1728C8A7D400025B9C /* Models */,
+				1278A8A22CF9FB89000DA119 /* DeviceSizeUtility.swift */,
+				1278A8A12CF9F6F4000DA119 /* View */,
+				12442D1728C8A7D400025B9C /* ViewModels */,
 				12442D0628C8A4F700025B9C /* Assets.xcassets */,
 				12442D0828C8A4F700025B9C /* Preview Content */,
 			);
@@ -86,14 +88,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		12442D1728C8A7D400025B9C /* Models */ = {
+		12442D1728C8A7D400025B9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				12442D1528C8A75300025B9C /* AdMobViewModels.swift */,
 				12442D1328C8A69A00025B9C /* LocationManager.swift */,
 				12442D1128C8A60900025B9C /* UIMapModels.swift */,
 			);
-			path = Models;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1278A8A12CF9F6F4000DA119 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12442D0228C8A4F600025B9C /* ImakokoApp.swift */,
+				12442D0428C8A4F600025B9C /* RootMainView.swift */,
+				12442D1528C8A75300025B9C /* AdMobView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		61B40B224F52624418695BCF /* Pods */ = {
@@ -229,8 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				12442D1428C8A69A00025B9C /* LocationManager.swift in Sources */,
-				12442D0528C8A4F600025B9C /* ContentView.swift in Sources */,
-				12442D1628C8A75300025B9C /* AdMobViewModels.swift in Sources */,
+				12442D0528C8A4F600025B9C /* RootMainView.swift in Sources */,
+				12442D1628C8A75300025B9C /* AdMobView.swift in Sources */,
+				1278A8A32CF9FB89000DA119 /* DeviceSizeUtility.swift in Sources */,
 				12442D1228C8A60900025B9C /* UIMapModels.swift in Sources */,
 				12442D0328C8A4F600025B9C /* ImakokoApp.swift in Sources */,
 			);
@@ -360,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Imakoko/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
@@ -393,7 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Imakoko/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;

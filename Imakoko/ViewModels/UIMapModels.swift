@@ -39,7 +39,7 @@ struct UIMapAddressGetView: UIViewRepresentable {
     @State var mapView = MKMapView()
     @State var tapped:Bool = false   // タップしたかどうか
     @Binding var tapAddress:String   // タップされた住所を格納
-    @ObservedObject var locationManager = LocationManager()
+    @StateObject var locationManager = LocationManager.shared
     
     func makeUIView(context: Self.Context) -> MKMapView {
         
@@ -83,9 +83,9 @@ extension UIMapAddressGetView{
         
         var control: UIMapAddressGetView
         
-        @Binding var mapView:MKMapView
-        @Binding var tapped:Bool
-        @Binding var tapAddress:String
+        @Binding var mapView: MKMapView
+        @Binding var tapped: Bool
+        @Binding var tapAddress: String
         
         @State var geocoder = CLGeocoder()
         
@@ -97,7 +97,7 @@ extension UIMapAddressGetView{
         }
         
         // 長押しされた時に実行されるメソッド
-        @objc  func longTapped(_ gesture: UILongPressGestureRecognizer) {
+        @objc func longTapped(_ gesture: UILongPressGestureRecognizer) {
             
             
             let viewPoint = gesture.location(in: mapView)
@@ -108,17 +108,19 @@ extension UIMapAddressGetView{
                 mapView.removeAnnotation(mapView.annotations[0])
             }
             
-            geocoder.reverseGeocodeLocation(CLLocation(latitude: mapCoordinate.latitude, longitude: mapCoordinate.longitude)) { [self] placemarks, error in
+            geocoder.reverseGeocodeLocation(CLLocation(latitude: mapCoordinate.latitude, longitude: mapCoordinate.longitude)) { [weak self] placemarks, error in
+                guard let self else { return }
                 if let placemark = placemarks?.first {
                     //住所
-                    let administrativeArea = placemark.administrativeArea == nil ? "" : placemark.administrativeArea!
-                    let locality = placemark.locality == nil ? "" : placemark.locality!
-                    let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
-                    let thoroughfare = placemark.thoroughfare == nil ? "" : placemark.thoroughfare!
-                    let subThoroughfare = placemark.subThoroughfare == nil ? "" : placemark.subThoroughfare!
-                    let placeName = !thoroughfare.contains( subLocality ) ? subLocality : thoroughfare
+                    //住所
+                    let administrativeArea = placemark.administrativeArea ?? ""
+                    let locality = placemark.locality ?? ""
+                    let subLocality = placemark.subLocality ?? ""
+                    let thoroughfare = placemark.thoroughfare ?? ""
+                    let subThoroughfare =  placemark.subThoroughfare ?? ""
+                    let placeName = !thoroughfare.contains(subLocality) ? subLocality + thoroughfare : thoroughfare
                     self.tapAddress = administrativeArea + locality + placeName + subThoroughfare
-                    if self.tapAddress == ""{
+                    if self.tapAddress.isEmpty {
                         self.tapAddress = "取得できないエリアです..."
                     }
                 }

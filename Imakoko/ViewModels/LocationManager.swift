@@ -10,6 +10,8 @@ import SwiftUI
 
 // 現在地を取得するためのクラス
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    
+    static let shared = LocationManager()
     // CLLocationManagerをインスタンス化
     let manager = CLLocationManager()
     let geocoder = CLGeocoder()
@@ -33,15 +35,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
         if let location = manager.location {
             
-            geocoder.reverseGeocodeLocation( location, completionHandler: { ( placemarks, error ) in
-                
+            geocoder.reverseGeocodeLocation( location, completionHandler: { [weak self] (placemarks, error) in
+                guard let self else { return }
                 if let placemark = placemarks?.first {
                     //住所
-                    let administrativeArea = placemark.administrativeArea == nil ? "" : placemark.administrativeArea!
-                    let locality = placemark.locality == nil ? "" : placemark.locality!
-                    let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
-                    let thoroughfare = placemark.thoroughfare == nil ? "" : placemark.thoroughfare!
-                    let subThoroughfare = placemark.subThoroughfare == nil ? "" : placemark.subThoroughfare!
+                    let administrativeArea = placemark.administrativeArea ?? ""
+                    let locality = placemark.locality ?? ""
+                    let subLocality = placemark.subLocality ?? ""
+                    let thoroughfare = placemark.thoroughfare ?? ""
+                    let subThoroughfare =  placemark.subThoroughfare ?? ""
                     let placeName = !thoroughfare.contains(subLocality) ? subLocality + thoroughfare : thoroughfare
                     self.address = administrativeArea + locality + placeName + subThoroughfare
                 }
