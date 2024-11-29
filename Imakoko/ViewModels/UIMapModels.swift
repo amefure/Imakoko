@@ -110,19 +110,17 @@ extension UIMapAddressGetView{
             
             geocoder.reverseGeocodeLocation(CLLocation(latitude: mapCoordinate.latitude, longitude: mapCoordinate.longitude)) { [weak self] placemarks, error in
                 guard let self else { return }
-                if let placemark = placemarks?.first {
-                    //住所
-                    //住所
-                    let administrativeArea = placemark.administrativeArea ?? ""
-                    let locality = placemark.locality ?? ""
-                    let subLocality = placemark.subLocality ?? ""
-                    let thoroughfare = placemark.thoroughfare ?? ""
-                    let subThoroughfare =  placemark.subThoroughfare ?? ""
-                    let placeName = !thoroughfare.contains(subLocality) ? subLocality + thoroughfare : thoroughfare
-                    self.tapAddress = administrativeArea + locality + placeName + subThoroughfare
-                    if self.tapAddress.isEmpty {
-                        self.tapAddress = "取得できないエリアです..."
-                    }
+                guard let placemark = placemarks?.first else { return }
+                // 住所を取得
+                let administrativeArea = placemark.administrativeArea ?? ""
+                let locality = placemark.locality ?? ""
+                let subLocality = placemark.subLocality ?? ""
+                let thoroughfare = placemark.thoroughfare ?? ""
+                let subThoroughfare =  placemark.subThoroughfare ?? ""
+                let placeName = !thoroughfare.contains(subLocality) ? subLocality + thoroughfare : thoroughfare
+                self.tapAddress = administrativeArea + locality + placeName + subThoroughfare
+                if self.tapAddress.isEmpty {
+                    self.tapAddress = "取得できないエリアです..."
                 }
             }
             self.tapped = true
