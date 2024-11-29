@@ -42,7 +42,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                     let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
                     let thoroughfare = placemark.thoroughfare == nil ? "" : placemark.thoroughfare!
                     let subThoroughfare = placemark.subThoroughfare == nil ? "" : placemark.subThoroughfare!
-                    let placeName = !thoroughfare.contains( subLocality ) ? subLocality : thoroughfare
+                    let placeName = !thoroughfare.contains(subLocality) ? subLocality + thoroughfare : thoroughfare
                     self.address = administrativeArea + locality + placeName + subThoroughfare
                 }
             })
